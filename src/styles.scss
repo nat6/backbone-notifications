@@ -1,0 +1,137 @@
+$main-color: #efbe4e;
+$font-color: #0d282c;
+$background-color: rgba(255, 255, 255, 0.4);
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style: none;
+}
+
+.button {
+  border-style: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+body {
+  min-width: 480px;
+  min-height: 100vh;
+  font-family: 'Arial', sans-serif;
+  font-size: 16px;
+  color: $font-color;
+  text-align: center;
+  background: url('./assets/img/background.jpeg') center/cover;
+}
+
+.wrapper {
+  margin: 15px;
+  display: flex;
+  align-items: flex-start;
+}
+
+.notifications__button {
+  width: 55px;
+  height: 55px;
+  position: relative;
+}
+
+.notifications__button::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 35px;
+  height: 35px;
+  transform: translate(-50%, -50%);
+  background-image: url('./assets/svg/notification.svg');
+  transition: 0.5s ease;
+}
+
+.notifications__button:hover::before {
+  transition: 0.5s ease;
+  filter: opacity(85%);
+}
+
+.notifications__count {
+  position: absolute;
+  top: 6px;
+  right: 7px;
+  width: 18px;
+  height: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  font-size: 10px;
+  background-color: $main-color;
+}
+
+.notifications__list {
+  position: absolute;
+  top: 80px;
+  left: 27px;
+  min-width: 300px;
+  min-height: 200px;
+  padding: 10px 20px;
+  background-color: $background-color;
+  border-radius: 5px;
+  box-shadow: 2px 4px 55px rgba(0, 0, 0, 0.15);
+  z-index: 5;
+}
+
+.notifications__item {
+  max-width: 300px;
+  margin: 10px 0;
+  padding: 10px;
+  padding-left: 16px;
+  position: relative;
+  text-align: left;
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 5px;
+}
+
+.notification__title {
+  font-size: 16px;
+}
+
+.notification__text {
+  font-size: 14px;
+}
+
+.notification__remove {
+  width: 28px;
+  height: 28px;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.notification__remove::before {
+  content: '';
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  transform: translate(-50%, -50%);
+  background-image: url('./assets/svg/remove.svg');
+}
+
+.notification__remove:hover::before {
+  filter: opacity(80%);
+}
+
+#shadow {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 3;
+}
