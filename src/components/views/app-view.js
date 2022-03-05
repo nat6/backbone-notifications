@@ -36,18 +36,12 @@ const AppView = Backbone.View.extend({
       this.addAll();
     } else {
       this.handleCount();
-      this.showEmpty();
     }
   },
 
   handleCount: function () {
     const view2 = new Count();
     this.$count.text(view2.render().$count);
-  },
-
-  showEmpty: function () {
-    this.$emptyNotification = $('<div>There are no new notifications</div>').addClass('notifications_empty');
-    this.$notifications.append(this.$emptyNotification);
   },
 
   showModalWin: function () {

@@ -28,7 +28,10 @@ export const Count = Backbone.View.extend({
   render: function () {
     if (!DefaultCollection.length) {
       this.$el.addClass('hidden');
+    } else {
+      this.$el.removeClass('hidden');
     }
+
     this.$el.html(DefaultCollection.length);
     return this;
   },
